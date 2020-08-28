@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
 body {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
     background: slategray;
-    align-items: ;
+    align-items: center;
+    height: 100%;
 }
 
 #drums {
@@ -17,9 +22,11 @@ body {
     justify-content: center;
     text-align: center;
     height: 100%;
+    grid-row: 2/4;
 }
 
 .drum {
+    background-color: darkgray;
     width: 200px;
     height: 200px;
 }
