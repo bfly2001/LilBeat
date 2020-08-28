@@ -2,16 +2,22 @@
     box-sizing: border-box;
 }
 
+body {
+    background: slategray;
+}
+
 #drums {
     margin: auto;
     max-width: 800px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-gap: 5px;
     align-items: center;
     justify-content: center;
     text-align: center;
+    height: 100%;
 }
 
 .drum {
-    width: 75px;
+    width: 200px;
 }
