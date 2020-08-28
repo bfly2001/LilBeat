@@ -4,6 +4,7 @@
 
 body {
     background: slategray;
+    align-items: ;
 }
 
 #drums {
@@ -20,4 +21,5 @@ body {
 
 .drum {
     width: 200px;
+    height: 200px;
 }
