@@ -1,2 +1,7 @@
 const bass = new Audio();
-bass.src = "/sounds/ZenithD.wav"
+const snare = new Audio();
+const hat = new Audio();
+
+bass.src = "/sounds/ZenithD.wav";
+snare.src = "/sounds/WildSnare.wav";
+hat.src = "/sounds/Valkyr.wav";
