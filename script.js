@@ -1,3 +1,4 @@
+let audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const bass = new Audio();
 const snare = new Audio();
 const hat = new Audio();
