@@ -29,8 +29,8 @@ h1 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100%;
-    grid-row: 2/4;
+    height: 50%;
+    grid-row: 2/3;
 }
 
 .drum {
@@ -38,7 +38,26 @@ h1 {
     width: 200px;
     height: 200px;
     box-shadow: 2px 3px 3px 2px rgb(73, 73, 73);
-    
+}
+
+.synths {
+    margin: auto;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 25%;
+    grid-row: 3/4;
+}
+
+#synth {
+    background-color: darkgray;
+    width: 600px;
+    height: 100px;
+    box-shadow: 2px 3px 3px 2px rgb(73, 73, 73);
+}
 }
 
 #cite {
