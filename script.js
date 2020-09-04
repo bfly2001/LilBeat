@@ -5,9 +5,10 @@ const bass = document.querySelector('bassdrum');
 const snare = document.querySelector('snaredrum');
 const hat = document.querySelector('hatdrum');
 const synth = document.getElementById('synth');
+const oscillator = audioContext.createOscillator();
+oscillator.type = 'triangle';
 
 synth.addEventListener('click', function() {
-    const oscillator = audioContext.createOscillator();
     oscillator.connect(audioContext.destination);
     oscillator.start();
 });
