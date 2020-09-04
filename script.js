@@ -5,14 +5,17 @@ const bass = document.querySelector('bassdrum');
 const snare = document.querySelector('snaredrum');
 const hat = document.querySelector('hatdrum');
 const synth = document.getElementById('synth');
-const oscillator = audioContext.createOscillator();
-oscillator.type = 'triangle';
-oscillator.frequency.value = 150;
-oscillator.connect(audioContext.destination);
+
 
 synth.addEventListener('click', function() {
+    let audioContext = new AudioContext();
+    let oscillator = audioContext.createOscillator();
+    oscillator.type = 'triangle';
+    oscillator.frequency.value = 150;
+    oscillator.connect(audioContext.destination);
     oscillator.start();
     oscillator.stop(0.1);
+    audioContext.resume();
 });
 
 /*
