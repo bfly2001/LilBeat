@@ -7,11 +7,12 @@ const hat = document.querySelector('hatdrum');
 const synth = document.getElementById('synth');
 const oscillator = audioContext.createOscillator();
 oscillator.type = 'triangle';
+oscillator.frequency.value = 150;
+oscillator.connect(audioContext.destination);
 
 synth.addEventListener('click', function() {
-    oscillator.connect(audioContext.destination);
     oscillator.start();
-    oscillator.stop(0.25);
+    oscillator.stop(0.1);
 });
 
 /*
