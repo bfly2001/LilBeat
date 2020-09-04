@@ -11,6 +11,7 @@ oscillator.type = 'triangle';
 synth.addEventListener('click', function() {
     oscillator.connect(audioContext.destination);
     oscillator.start();
+    oscillator.stop(0.25);
 });
 
 /*
