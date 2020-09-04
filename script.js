@@ -10,7 +10,7 @@ bass.addEventListener('click', function() {
     let audioContext = new AudioContext();
     let oscillator = audioContext.createOscillator();
     oscillator.type = 'sine';
-    oscillator.frequency.value = 50;
+    oscillator.frequency.value = 100;
     oscillator.connect(audioContext.destination);
     oscillator.start();
     oscillator.stop(0.1);
@@ -49,12 +49,3 @@ synth.addEventListener('click', function() {
     oscillator.stop(0.1);
     audioContext.resume();
 });
-
-/*
-const bass = new Audio();
-const snare = new Audio();
-const hat = new Audio();
-
-bass.src = "/sounds/ZenithD.wav";
-snare.src = "/sounds/WildSnare.wav";
-hat.src = "/sounds/Valkyr.wav";*/  
