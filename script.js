@@ -49,3 +49,13 @@ synth.addEventListener('click', function() {
     oscillator.stop(0.1);
     audioContext.resume();
 });
+
+//scheduling
+let tempo = 60.0;
+const bpmControl = document.querySelector('#bpm');
+const bpmValEl = document.querySelector('#bpmval');
+
+bpmControl.addEventListener('input', ev => {
+    tempo = Number(ev.target.value);
+    bpmValEl.innerText = tempo;
+}, false);
