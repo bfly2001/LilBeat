@@ -76,3 +76,7 @@ function nextNote() {
         currentNote = 0;
     }
 }
+
+// Create a queue for the notes that are to be played, with the current time that we want them to play:
+const notesInQueue = [];
+
