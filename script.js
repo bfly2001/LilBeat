@@ -62,3 +62,17 @@ bpmControl.addEventListener('input', ev => {
 
 const lookahead = 25.0;//how frequently to call the scheduling function in ms
 const scheduleAheadTime = 0.1;// how far ahead to schedule audio in seconds
+
+let currentNote = 0;//the note we are currently playing
+let nextNoteTime = 0.0;//when the next note is due
+function nextNote() {
+    const secondsPerBeat = 60.0 / tempo;
+
+    nextNoteTime += secondsPerBeat;//add beat length to beat time
+
+    //advance the beat number, wrap to 0
+    currentNote++;
+    if (currentNote === 4) {
+        currentNote = 0;
+    }
+}
