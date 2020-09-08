@@ -59,3 +59,6 @@ bpmControl.addEventListener('input', ev => {
     tempo = Number(ev.target.value);
     bpmValEl.innerText = tempo;
 }, false);
+
+const lookahead = 25.0;//how frequently to call the scheduling function in ms
+const scheduleAheadTime = 0.1;// how far ahead to schedule audio in seconds
