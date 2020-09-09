@@ -80,3 +80,12 @@ function nextNote() {
 // Create a queue for the notes that are to be played, with the current time that we want them to play:
 const notesInQueue = [];
 
+function scheduleNote(beatNumber, time) {
+    // push the note on the queue, even if we're not playing.
+    notesInQueue.push({note: beatNumber, time: time});
+
+    if (pads[0].querySelectorAll('button)[currentNote].getAttribute('aria-checked') === 'true') {
+        playSweep();
+    }
+}
+
