@@ -17,11 +17,7 @@ function playBass() {
     audioContext.resume();
 }
 
-bass.addEventListener('click', function() {
-    playBass();
-});
-
-snare.addEventListener('click', function() {
+function playSnare() {
     let audioContext = new AudioContext();
     let oscillator = audioContext.createOscillator();
     oscillator.type = 'sawtooth';
@@ -30,9 +26,9 @@ snare.addEventListener('click', function() {
     oscillator.start();
     oscillator.stop(0.1);
     audioContext.resume();
-});
+}
 
-hat.addEventListener('click', function() {
+function playHat() {
     let audioContext = new AudioContext();
     let oscillator = audioContext.createOscillator();
     oscillator.type = 'square';
@@ -41,9 +37,9 @@ hat.addEventListener('click', function() {
     oscillator.start();
     oscillator.stop(0.1);
     audioContext.resume();
-});
+}
 
-synth.addEventListener('click', function() {
+function playSynth() {
     let audioContext = new AudioContext();
     let oscillator = audioContext.createOscillator();
     oscillator.type = 'triangle';
@@ -52,6 +48,22 @@ synth.addEventListener('click', function() {
     oscillator.start();
     oscillator.stop(0.1);
     audioContext.resume();
+}
+
+bass.addEventListener('click', function() {
+    playBass();
+});
+
+snare.addEventListener('click', function() {
+    playSnare();
+});
+
+hat.addEventListener('click', function() {
+    playHat();
+});
+
+synth.addEventListener('click', function() {
+    playSynth();
 });
 
 //scheduling
