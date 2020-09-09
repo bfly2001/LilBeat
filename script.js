@@ -6,7 +6,7 @@ const snare = document.getElementById('snaredrum');
 const hat = document.getElementById('hatdrum');
 const synth = document.getElementById('synth');
 
-bass.addEventListener('click', function() {
+function playBass() {
     let audioContext = new AudioContext();
     let oscillator = audioContext.createOscillator();
     oscillator.type = 'sine';
@@ -15,6 +15,10 @@ bass.addEventListener('click', function() {
     oscillator.start();
     oscillator.stop(0.1);
     audioContext.resume();
+}
+
+bass.addEventListener('click', function() {
+    playBass();
 });
 
 snare.addEventListener('click', function() {
@@ -85,7 +89,16 @@ function scheduleNote(beatNumber, time) {
     notesInQueue.push({note: beatNumber, time: time});
 
     if (pads[0].querySelectorAll('button)[currentNote].getAttribute('aria-checked') === 'true') {
-        playSweep();
+        playBass();
+    }
+    if (pads[1].querySelectorAll('button)[currentNote].getAttribute('aria-checked') === 'true') {
+        playSnare();
+    }
+    if (pads[2].querySelectorAll('button)[currentNote].getAttribute('aria-checked') === 'true') {
+        playHat();
+    }
+    if (pads[3].querySelectorAll('button)[currentNote].getAttribute('aria-checked') === 'true') {
+        playSynth();
     }
 }
 
