@@ -8,6 +8,16 @@ const synth = document.getElementById('synth');
 const drums = document.querySelectorAll('#drum');
 const allDrums = document.querySelectorAll('.drum');
 
+allDrums.forEach(el => {
+    el.addEventListener('click', () => {
+        if (el.getAttribute('aria-checked') === 'false') {
+            el.setAttribute('aria-checked', 'true');
+        } else {
+            el.setAttribute('aria-checked', 'false');
+        }
+    }, false)
+})
+
 function playBass() {
     let audioContext = new AudioContext();
     let oscillator = audioContext.createOscillator();
@@ -102,16 +112,16 @@ function scheduleNote(beatNumber, time) {
     // push the note on the queue, even if we're not playing.
     notesInQueue.push({note: beatNumber, time: time});
 
-    if (pads[0].querySelectorAll('button)[currentNote].getAttribute('aria-checked') === 'true') {
+    if (pads[0].querySelectorAll('button')[currentNote].getAttribute('aria-checked') === 'true') {
         playBass();
     }
-    if (pads[1].querySelectorAll('button)[currentNote].getAttribute('aria-checked') === 'true') {
+    if (pads[1].querySelectorAll('button')[currentNote].getAttribute('aria-checked') === 'true') {
         playSnare();
     }
-    if (pads[2].querySelectorAll('button)[currentNote].getAttribute('aria-checked') === 'true') {
+    if (pads[2].querySelectorAll('button')[currentNote].getAttribute('aria-checked') === 'true') {
         playHat();
     }
-    if (pads[3].querySelectorAll('button)[currentNote].getAttribute('aria-checked') === 'true') {
+    if (pads[3].querySelectorAll('button')[currentNote].getAttribute('aria-checked') === 'true') {
         playSynth();
     }
 }
