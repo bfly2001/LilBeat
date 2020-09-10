@@ -5,6 +5,7 @@ const bass = document.getElementById('bassdrum');
 const snare = document.getElementById('snaredrum');
 const hat = document.getElementById('hatdrum');
 const synth = document.getElementById('synth');
+const drums = document.querySelectorAll('.drum');
 
 function playBass() {
     let audioContext = new AudioContext();
