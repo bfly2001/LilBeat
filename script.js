@@ -1,10 +1,10 @@
 let audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
 
-const bass = document.getElementById('bassdrum');
-const snare = document.getElementById('snaredrum');
-const hat = document.getElementById('hatdrum');
-const synth = document.getElementById('synth');
+const bass = document.getElementsByClassName('bassDrum');
+const snare = document.getElementsByClassName('snareDrum');
+const hat = document.getElementsByClassName('hatDrum');
+const synth = document.getElementsByClassName('synthDrum');
 const drums = document.querySelectorAll('#drum');
 const allDrums = document.querySelectorAll('.drum');
 
