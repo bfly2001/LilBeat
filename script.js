@@ -164,3 +164,33 @@ let timerID;
         requestAnimationFrame(draw);
     }
 
+    const loadingEl = document.querySelector('.loading');
+    const playbutton = document.querySelector('[data-playing]');
+    let isPlaying = false;
+    setupSample()
+        .then((sample) => {
+            loadingEl.style.display = 'none';
+
+            dtmf = sample;
+
+            playbutton.addEventListener('click', ev => {
+                isPlaying = !isPlaying;
+
+                if (isPlaying) {
+
+                    if (audioContext.state === 'suspended') {
+                        audioContext.resume();
+                    }
+
+                    currentNote = 0;
+                    nextNoteTime = audioContext.currentTime;
+                    scheduler();
+                    requestAnimationFrame(draw);
+                    ev.target.dataset.playing = 'true'; 
+                } else {
+                    window.clearTimeout(timerID);
+                    ev.target.dataset.playing = 'false';
+                }
+            })
+        });
+
