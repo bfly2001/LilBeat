@@ -120,16 +120,16 @@ function scheduleNote(beatNumber, time) {
     // push the note on the queue, even if we're not playing.
     notesInQueue.push({note: beatNumber, time: time});
 
-    if (pads[0].querySelectorAll('button')[currentNote].getAttribute('aria-checked') === 'true') {
+    if (drums[0].querySelectorAll('button')[currentNote].getAttribute('aria-checked') === 'true') {
         playBass();
     }
-    if (pads[1].querySelectorAll('button')[currentNote].getAttribute('aria-checked') === 'true') {
+    if (drums[1].querySelectorAll('button')[currentNote].getAttribute('aria-checked') === 'true') {
         playSnare();
     }
-    if (pads[2].querySelectorAll('button')[currentNote].getAttribute('aria-checked') === 'true') {
+    if (drums[2].querySelectorAll('button')[currentNote].getAttribute('aria-checked') === 'true') {
         playHat();
     }
-    if (pads[3].querySelectorAll('button')[currentNote].getAttribute('aria-checked') === 'true') {
+    if (drums[3].querySelectorAll('button')[currentNote].getAttribute('aria-checked') === 'true') {
         playSynth();
     }
 }
