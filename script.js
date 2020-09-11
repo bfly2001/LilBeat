@@ -134,3 +134,12 @@ function scheduleNote(beatNumber, time) {
     }
 }
 
+let timerID;
+    function scheduler() {
+        while (nextNoteTime < audioContext.currentTime + scheduleAheadTime) {
+            scheduleNote(currentNote, nextNoteTime);
+            nextNoteTime();
+        }
+        timerID = window.setTimeout(scheduler, lookahead);
+    }
+
