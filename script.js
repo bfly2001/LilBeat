@@ -1,12 +1,36 @@
 let audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
 
-const bass = document.getElementsByClassName('bassDrum');
-const snare = document.getElementsByClassName('snareDrum');
-const hat = document.getElementsByClassName('hatDrum');
-const synth = document.getElementsByClassName('synthDrum');
+const bass = document.querySelectorAll('.bassDrum');
+const snare = document.querySelectorAll('.snareDrum');
+const hat = document.querySelectorAll('.hatDrum');
+const synth = document.querySelectorAll('.synthDrum');
 const drums = document.querySelectorAll('#drum');
 const allDrums = document.querySelectorAll('.drum');
+
+bass.forEach(el => {
+    el.addEventListener('click', () => {
+        playBass();
+    })
+})
+
+snare.forEach(el => {
+    el.addEventListener('click', () => {
+        playSnare();
+    })
+})
+
+hat.forEach(el => {
+    el.addEventListener('click', () => {
+        playHat();
+    })
+})
+
+synth.forEach(el => {
+    el.addEventListener('click', () => {
+        playSynth();
+    })
+})
 
 allDrums.forEach(el => {
     el.addEventListener('click', () => {
@@ -61,22 +85,6 @@ function playSynth() {
     oscillator.stop(0.1);
     audioContext.resume();
 }
-
-bass.addEventListener('click', function() {
-    playBass();
-});
-
-snare.addEventListener('click', function() {
-    playSnare();
-});
-
-hat.addEventListener('click', function() {
-    playHat();
-});
-
-synth.addEventListener('click', function() {
-    playSynth();
-});
 
 //scheduling
 let tempo = 60.0;
