@@ -143,3 +143,24 @@ let timerID;
         timerID = window.setTimeout(scheduler, lookahead);
     }
 
+    let lastNoteDrawn = 3;
+    function draw() {
+        let drawNote = lastNoteDrawn;
+        const currentTime = audioContext.currentTime;
+
+        while (notesInQueue.length && notesInQueue[0].time < currentTime) {
+            drawNote = notesInQueue[0].note;
+            notesInQueue.splice(0,1);
+        }
+
+        if (lastNoteDrawn !== drawNote) {
+            drums.forEach(el => {
+                el.children[lastNoteDrawn].style.borderColor = 'hsla(0,0%,10%,1)';
+                el.children[drawNote].style.borderColor = 'hsla(49, 99%, 50%, 1)';
+            });
+
+            lastNoteDrawn = drawNote;
+        }
+        requestAnimationFrame(draw);
+    }
+
