@@ -92,6 +92,15 @@ async function getFile(audioContext, filePath) {
     const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
 }
 
+function playSample(AudioContext, audioBuffer) {
+    const sampleSource = audioContext.createBuffer();
+    sampleSource.buffer = AudioBuffer;
+    sampleSource.playbackRate.setValueAtTime(playbackRate, audioContext.currentTime);
+    sampleSource.connect(AudioContext.destination)
+    sampleSource.start();
+    return sampleSource;
+}
+
 async function setupSample() {
     const filePath = 'Valkyr.wav';
     const sample = await getFile(audioContext, filePath);
