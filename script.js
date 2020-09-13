@@ -86,6 +86,12 @@ function playSynth() {
     audioContext.resume();
 }
 
+async function getFile(audioContext, filePath) {
+    const response = await fetch(filePath);
+    const arrayBuffer = await response.arrayBuffer();
+    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+}
+
 async function setupSample() {
     const filePath = 'Valkyr.wav';
     const sample = await getFile(audioContext, filePath);
