@@ -87,7 +87,7 @@ function playSynth() {
 }
 
 async function setupSample() {
-    const filePath = 'sounds/Valkyr.wav';
+    const filePath = 'Valkyr.wav';
     const sample = await getFile(audioContext, filePath);
     return sample;
 }
@@ -121,6 +121,7 @@ function nextNote() {
 
 // Create a queue for the notes that are to be played, with the current time that we want them to play:
 const notesInQueue = [];
+let dtmf;
 
 function scheduleNote(beatNumber, time) {
     // push the note on the queue, even if we're not playing.
