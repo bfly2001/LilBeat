@@ -86,6 +86,12 @@ function playSynth() {
     audioContext.resume();
 }
 
+async function setupSample() {
+    const filePath = 'sounds/Valkyr.wav';
+    const sample = await getFile(audioContext, filePath);
+    return sample;
+}
+
 //scheduling
 let tempo = 60.0;
 const bpmControl = document.querySelector('#bpm');
