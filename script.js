@@ -5,8 +5,10 @@ const bass = document.querySelectorAll('.bassDrum');
 const snare = document.querySelectorAll('.snareDrum');
 const hat = document.querySelectorAll('.hatDrum');
 const synth = document.querySelectorAll('.synthDrum');
-const drums = document.querySelectorAll('#drum');
+const drums = document.querySelectorAll('.drums');
 const allDrums = document.querySelectorAll('.drum');
+
+console.log(drums);
 
 bass.forEach(el => {
     el.addEventListener('click', () => {
