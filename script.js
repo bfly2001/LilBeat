@@ -162,7 +162,7 @@ let timerID;
     function scheduler() {
         while (nextNoteTime < audioContext.currentTime + scheduleAheadTime) {
             scheduleNote(currentNote, nextNoteTime);
-            nextNoteTime();
+            nextNote();
         }
         timerID = window.setTimeout(scheduler, lookahead);
     }
