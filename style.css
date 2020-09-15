@@ -36,3 +36,8 @@ body {
 #controls {
     background-color: lightgray;
 }
+
+#playbutton {
+    background-color: firebrick;
+    color: floralwhite;
+}
