@@ -32,3 +32,7 @@ body {
     height: 100px;
     box-shadow: 2px 3px 3px 2px rgb(73, 73, 73);
 }
+
+#controls {
+    background-color: lightgray;
+}
